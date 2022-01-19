@@ -136,6 +136,6 @@ func flattenDepthFloat64(a reflect.Value, depth int) ([]float64, error) {
 
 func getDepth(a interface{}) int {
   typ := reflect.TypeOf(a)
-  bracketExp,_ := regexp.Compile("\\[\\]")
+  bracketExp,_ := regexp.Compile(`\[\]`)
   return len(bracketExp.FindAllStringIndex(typ.String(),-1))
 }
